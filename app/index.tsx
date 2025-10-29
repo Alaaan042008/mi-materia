@@ -1,67 +1,54 @@
-import React from "react";
-import { Text, View, StyleSheet, ScrollView, StatusBar } from "react-native";
-import TextField from "@/components/TextField";
-import "../global.css";
-import { Stack } from "expo-router";
+import { View, Text, TouchableOpacity, Image } from "react-native";
+import { Stack, useRouter } from "expo-router";
+import "@/global.css";
 
 export default function Index() {
+  const router = useRouter();
+
+  const entrarPokedex = () => {
+    router.push("/home/PokemonListScreen");
+  };
+
   return (
     <>
+      {/* Ocultar el header del Stack */}
       <Stack.Screen options={{ headerShown: false }} />
-    <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#0A0A0A" />
 
-      {/* Fondo y título */}
-      <ScrollView
-        contentContainerStyle={styles.scrollContainer}
-        showsVerticalScrollIndicator={false}
-      >
-        <Text style={styles.title}>Hola profeee</Text>
-        <Text style={styles.subtitle}>Crea tu cuenta (deme una moneditaaa)</Text>
+      <View className="flex-1 bg-black items-center justify-center px-8">
+        {/* 🔹 Logo Pokémon */}
+        <Image
+          source={{
+            uri: "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png",
+          }}
+          className="w-48 h-48 mb-6"
+          resizeMode="contain"
+        />
 
-        {/* Formulario */}
-        <View style={styles.formWrapper}>
-          <TextField />
-        </View>
-      </ScrollView>
-    </View>
+        {/* 🔹 Texto principal */}
+        <Text className="text-white text-3xl font-extrabold mb-2 text-center">
+          Bienvenido a la Pokédex de Alaan
+        </Text>
+
+        <Text className="text-gray-400 text-base text-center mb-10">
+          Accede a la PC de Bill para ver todos los Pokémon registrados hasta la
+          Generación 9.
+        </Text>
+
+        {/* 🔹 Botón principal */}
+        <TouchableOpacity
+          onPress={entrarPokedex}
+          className="bg-[#FA0501] px-10 py-4 rounded-2xl shadow-lg active:bg-red-700"
+        >
+          <Text className="text-white font-bold text-lg uppercase">
+            Entrar a la PC de Bill
+          </Text>
+        </TouchableOpacity>
+
+        {/* 🔹 Créditos o pie */}
+        <Text className="text-gray-500 mt-16 text-sm">
+          © 2025 Alaan's Pokédex
+        </Text>
+      </View>
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#0A0A0A", // Fondo oscuro elegante
-  },
-  scrollContainer: {
-    alignItems: "center",
-    justifyContent: "center",
-    paddingVertical: 60,
-    paddingHorizontal: 20,
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: "bold",
-    color: "#4B9EFF", // Azul suave para resaltar
-    marginBottom: 10,
-    textAlign: "center",
-  },
-  subtitle: {
-    fontSize: 16,
-    color: "#AAA",
-    marginBottom: 40,
-    textAlign: "center",
-  },
-  formWrapper: {
-    width: "100%",
-    backgroundColor: "#151515",
-    borderRadius: 15,
-    paddingVertical: 30,
-    paddingHorizontal: 20,
-    shadowColor: "#4B9EFF",
-    shadowOpacity: 0.3,
-    shadowRadius: 10,
-    elevation: 6,
-  },
-});

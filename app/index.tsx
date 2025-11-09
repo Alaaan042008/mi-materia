@@ -11,13 +11,23 @@ export default function IndexScreen() {
       <Image
         source={require("@/assets/images/78d9a14a-5646-444c-8255-c41850ae3243.png")}
       />
-      <Text className="text-white text-4xl font-bold mb-10">MyKast</Text>
 
       <TouchableOpacity
-        onPress={() => router.push("/home/HomeScreen")}
-        className="bg-[#FA0501] px-10 py-4 rounded-full"
+        onPress={() => router.push("/login/LoginScreen")}
+        className="bg-[#FA0501] px-10 py-4 rounded-full mb-5 w-60"
       >
-        <Text className="text-white text-lg font-semibold">Entrar</Text>
+        <Text className="text-white text-lg font-semibold text-center">
+          Iniciar Sesión
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => router.push("/login/registerScreen")}
+        className="bg-[#181818] px-10 py-4 rounded-full border border-[#FA0501] w-60"
+      >
+        <Text className="text-white text-lg font-semibold text-center">
+          Registrarse
+        </Text>
       </TouchableOpacity>
     </View>
   );

@@ -47,7 +47,7 @@ export const MusicProvider = ({ children }: { children: React.ReactNode }) => {
       artist: "Santana ft. Maná",
       file: require("@/assets/music/corazon_espinado.mp3"),
       image: require("@/assets/images/CES.png"),
-      lyrics: "",
+      lyrics: "Esa mujer me está matando\nMe ha espinado el corazón\nPor más que trato de olvidarla\nMi alma no da razón\n\n Mi corazón aplastado\n Dolido y abandonado\n A ver, a ver, tú sabes, dime, mi amor\n Cuánto amor y qué dolor nos quedó\n\n¡Ay, corazón espinado! \n (¡Cómo duele, me duele, mamá!) \n¡Ay, cómo me duele el amor! \n\nY cómo duele, cómo duele el corazón\nCuando uno es bien entregado\n Pero no olvides, mujer, que algún día dirás\n¡Ay, ay, ay! ¡Cómo me duele el amor! \n\n¡Ay, corazón espinado! \n(¡Cómo duele, me duele, mamá!) \n¡Ay, cómo me duele el amor! \n¡Ay, corazón espinado! \n¡Ay, cómo me duele el amor! \nCómo me duele el olvido\nCómo duele el corazón\n Cómo me duele el estar vivo\nSin tenerte a un lado, amor\n\nCorazón espinado\nCorazón espinado\nCorazón espinado\nCorazón espinado\n\n(Corazón espinado) \n(Corazón espinado) \n(Corazón espinado) \n(Corazón espinado)",
     },
     {
       id: 3,

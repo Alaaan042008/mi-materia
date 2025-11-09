@@ -1,12 +1,13 @@
-import {Stack} from "expo-router";
+import { Stack } from "expo-router";
+import React from "react";
 
-const HomeLayout = () => {
-    return(
-        <Stack>
-            <Stack.Screen name="index" options={{title:"home"}}/>
-            <Stack.Screen name="SettingsScreen" options={{title:"SettingsScreen"}}/>
-        </Stack>
-    )
+export default function HomeLayout() {
+  return (
+    <Stack
+      screenOptions={{
+        headerShown: false,
+        animation: "slide_from_right",
+      }}
+    />
+  );
 }
-
-export default HomeLayout

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, Alert, Image } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
@@ -31,6 +31,9 @@ export default function RegisterScreen() {
 
   return (
     <View className="flex-1 bg-[#0b0b0b] px-6 pt-20">
+      <Image
+              source={require("@/assets/images/78d9a14a-5646-444c-8255-c41850ae3243.png")}
+            />
       <TouchableOpacity
         onPress={() => router.back()}
         className="absolute top-12 left-6 bg-white/10 rounded-full p-3"
